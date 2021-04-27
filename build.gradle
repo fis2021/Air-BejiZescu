@@ -17,3 +17,14 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+jar {
+    manifest {
+        attributes "Main-Class": "Air-BejiZescu.Main"
+    }
+
+    archiveName = 'Air BejiZescu.jar'
+    from {
+        configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}
+    }
+}
