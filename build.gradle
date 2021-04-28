@@ -1,10 +1,12 @@
 plugins {
     id 'java'
     id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
-group 'org.example'
+group 'org.loose.fis'
 version '1.0-SNAPSHOT'
+description = 'A simple registration example using Java 15+, JavaFX, Maven / Gradle and saving users in Nitrite Java (with encoded passwords).'
 
 repositories {
     mavenCentral()
@@ -13,10 +15,20 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    implementation 'org.dizitart:nitrite:3.4.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.1'
 }
 
 test {
     useJUnitPlatform()
+}
+
+sourceCompatibility = 15
+targetCompatibility = 15
+
+javafx {
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+    version = '11.0.2'
 }
 
 jar {
@@ -30,4 +42,4 @@ jar {
     }
 }
 
-mainClassName = 'HelloWorld'
+mainClassName = 'org.loose.fis.sre.Main'
