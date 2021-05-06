@@ -1,12 +1,12 @@
-package org.loose.fis.sre;
+package org.reg;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.loose.fis.sre.services.FileSystemService;
-import org.loose.fis.sre.services.UserService;
+import org.reg.services.FileSystemService;
+import org.reg.services.UserService;
 
 import java.nio.file.Files;
 import java.nio.file.Path;

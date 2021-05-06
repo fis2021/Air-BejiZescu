@@ -42,4 +42,4 @@ jar {
     }
 }
 
-mainClassName = 'org.loose.fis.sre.Main'
+mainClassName = 'org.reg.Main'

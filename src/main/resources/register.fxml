@@ -7,15 +7,15 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="341.0" prefWidth="426.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegistrationController">
+<GridPane alignment="center" hgap="10" prefHeight="412.0" prefWidth="497.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.RegistrationController">
     <padding>
         <Insets bottom="20.0" left="25.0" right="25.0" top="25.0" />
     </padding>
-    <Text id="title-text" text="Air-BejiZescu Registration Form" wrappingWidth="274.8105697631836" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+    <Text id="title-text" text="Air BejiZescu Registration Form" wrappingWidth="274.8105697631836" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
 
     <Label text="Username:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-    <TextField fx:id="usernameField" prefHeight="26.0" prefWidth="46.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+    <TextField fx:id="usernameField" prefHeight="26.0" prefWidth="191.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
 
     <Label text="Password:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
