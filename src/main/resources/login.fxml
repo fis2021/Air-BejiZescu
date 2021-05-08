@@ -5,31 +5,35 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.LoginController">
-
-    <Label layoutX="303.0" layoutY="36.0" prefHeight="20.0" prefWidth="82.0" text="Username" textAlignment="CENTER" textFill="#0c1649">
-        <font>
-            <Font name="DejaVu Serif Bold" size="14.0" />
-        </font>
-    </Label>
-    <TextField fx:id="usernameField" layoutX="223.0" layoutY="56.0" prefHeight="26.0" prefWidth="241.0" />
-    <Label layoutX="308.0" layoutY="101.0" prefHeight="20.0" prefWidth="82.0" text="Password" textFill="#0c1649">
-        <font>
-            <Font name="DejaVu Serif Bold" size="14.0" />
-        </font>
-    </Label>
-    <PasswordField fx:id="passwordField" layoutX="223.0" layoutY="121.0" prefHeight="26.0" prefWidth="242.0" />
-    <Button fx:id="loginButton" layoutX="222.0" layoutY="243.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="26.0" prefWidth="242.0" text="Login" textAlignment="CENTER" textFill="#0c1649">
+<AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="577.0" style="-fx-background-color: #87CEEB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.LoginController">
+    <TextField fx:id="usernameField" layoutX="215.0" layoutY="175.0" prefHeight="26.0" prefWidth="241.0" promptText="*Username" />
+    <PasswordField fx:id="passwordField" layoutX="214.0" layoutY="221.0" prefHeight="26.0" prefWidth="242.0" promptText="*Password" />
+    <Button fx:id="loginButton" layoutX="214.0" layoutY="298.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="26.0" prefWidth="242.0" text="Login" textAlignment="CENTER" textFill="#0c1649">
         <font>
             <Font name="DejaVu Serif Bold" size="13.0" />
         </font>
     </Button>
-    <ChoiceBox fx:id="role" layoutX="269.0" layoutY="187.0" prefWidth="150.0">
+    <ChoiceBox fx:id="role" layoutX="260.0" layoutY="254.0" prefWidth="150.0">
     </ChoiceBox>
-    <Label layoutX="326.0" layoutY="162.0" prefHeight="18.0" prefWidth="39.0" text="Role" textAlignment="CENTER" textFill="#06094f">
-        <font>
-            <Font name="DejaVu Serif Bold" size="14.0" />
-        </font>
-    </Label>
-    <Text fx:id="message" fill="#e20909" layoutX="234.0" layoutY="326.0" wrappingWidth="217.39999999999998" />
+    <Text fx:id="message" fill="#e20909" layoutX="31.0" layoutY="369.0" wrappingWidth="442.200048828125" />
+   <ImageView fitHeight="174.0" fitWidth="171.0" layoutX="388.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@logo1.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@pngwing.com.png" />
+      </image>
+   </ImageView>
+   <Text layoutX="89.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Form">
+      <font>
+         <Font name="Centaur" size="57.0" />
+      </font>
+   </Text>
+   <Text layoutX="31.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your credentials in the fields above" wrappingWidth="297.5445556640625">
+      <font>
+         <Font name="Calibri Italic" size="18.0" />
+      </font>
+   </Text>
 </AnchorPane>
