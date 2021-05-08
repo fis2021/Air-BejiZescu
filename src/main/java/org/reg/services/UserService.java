@@ -2,7 +2,7 @@ package org.reg.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
-import org.reg.exceptions.UsernameAlreadyExistsException;
+import org.reg.exceptions.PasswordIncorrectException;
 import org.reg.model.User;
 
 import java.nio.charset.StandardCharsets;
@@ -10,28 +10,36 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
-public class UserService {
+import static org.reg.services.FileSystemService.getPathToFile;
 
+public class UserService {
     private static ObjectRepository<User> userRepository;
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(FileSystemService.getPathToFile("BejiZescu.db").toFile())
+                .filePath(getPathToFile("Air BejiZescu.db").toFile())
                 .openOrCreate("test", "test");
 
         userRepository = database.getRepository(User.class);
     }
 
-    public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
-        checkUserDoesNotAlreadyExist(username);
-        userRepository.insert(new User(username, encodePassword(username, password), role));
+    public static void addUser(String username, String password, String role, String name, String eMail, String phoneNumber) {
+        userRepository.insert(new User(username, encodePassword(username, password), role, name, eMail, phoneNumber));
     }
 
-    private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
+    public static void addUser(String username, String password, String role, String name, String eMail, String phoneNumber, String nameOfAgency) {
+        userRepository.insert(new User(username, encodePassword(username, password), role, name, eMail, phoneNumber, nameOfAgency));
+    }
+
+    public static boolean checkUserDoesAlreadyExist(String username, String password) throws PasswordIncorrectException{
         for (User user : userRepository.find()) {
-            if (Objects.equals(username, user.getUsername()))
-                throw new UsernameAlreadyExistsException(username);
+            if (Objects.equals(username, user.getUsername())) {
+                if(!Objects.equals(user.getPassword(), encodePassword(username,password)))
+                    throw new PasswordIncorrectException(password);
+                else return true;
+            }
         }
+        return false;
     }
 
     private static String encodePassword(String salt, String password) {
@@ -54,6 +62,4 @@ public class UserService {
         }
         return md;
     }
-
-
 }

@@ -7,14 +7,29 @@ public class User {
     private String username;
     private String password;
     private String role;
+    private String eMail, phoneNumber, name, nameOfAgency;
 
-    public User(String username, String password, String role) {
+    public User(String username, String password, String role, String name, String eMail, String phoneNumber) {
         this.username = username;
         this.password = password;
         this.role = role;
+        this.eMail = eMail;
+        this.phoneNumber = phoneNumber;
+        this.name = name;
+    }
+
+    public User(String username, String password, String role, String name, String eMail, String phoneNumber, String nameOfAgency) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.eMail = eMail;
+        this.phoneNumber = phoneNumber;
+        this.name = name;
+        this.nameOfAgency = nameOfAgency;
     }
 
     public User() {
+
     }
 
     public String getUsername() {
@@ -41,7 +56,6 @@ public class User {
         this.role = role;
     }
 
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -53,7 +67,6 @@ public class User {
         return role != null ? role.equals(user.role) : user.role == null;
     }
 
-    @Override
     public int hashCode() {
         int result = username != null ? username.hashCode() : 0;
         result = 31 * result + (password != null ? password.hashCode() : 0);
