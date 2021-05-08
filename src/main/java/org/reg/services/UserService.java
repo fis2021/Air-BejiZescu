@@ -27,8 +27,8 @@ public class UserService {
         userRepository.insert(new User(username, encodePassword(username, password), role, name, eMail, phoneNumber));
     }
 
-    public static void addUser(String username, String password, String role, String name, String eMail, String phoneNumber, String nameOfAgency) {
-        userRepository.insert(new User(username, encodePassword(username, password), role, name, eMail, phoneNumber, nameOfAgency));
+    public static void addUser(String username, String password, String role, String name, String eMail, String phoneNumber, String personalKey) {
+        userRepository.insert(new User(username, encodePassword(username, password), role, name, eMail, phoneNumber, personalKey));
     }
 
     public static boolean checkUserDoesAlreadyExist(String username, String password) throws PasswordIncorrectException{

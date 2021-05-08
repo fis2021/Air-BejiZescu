@@ -28,9 +28,9 @@
             <Image url="@logo1.png" />
          </image>
       </ImageView>
-      <Text layoutX="14.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select your desired action from the above choices" wrappingWidth="452.59996032714844">
+      <Text layoutX="22.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select your desired action from the above choices" wrappingWidth="452.59996032714844">
          <font>
-            <Font name="Centaur" size="22.0" />
+            <Font name="Times New Roman Italic" size="19.0" />
          </font>
       </Text>
       <Button fx:id="paymentButton" layoutX="130.0" layoutY="150.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="261.0" text="Show my payment details!">

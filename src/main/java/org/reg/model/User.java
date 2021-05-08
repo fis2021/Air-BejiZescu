@@ -7,7 +7,7 @@ public class User {
     private String username;
     private String password;
     private String role;
-    private String eMail, phoneNumber, name, nameOfAgency;
+    private String eMail, phoneNumber, name, personalKey;
 
     public User(String username, String password, String role, String name, String eMail, String phoneNumber) {
         this.username = username;
@@ -25,7 +25,7 @@ public class User {
         this.eMail = eMail;
         this.phoneNumber = phoneNumber;
         this.name = name;
-        this.nameOfAgency = nameOfAgency;
+        this.personalKey = personalKey;
     }
 
     public User() {
