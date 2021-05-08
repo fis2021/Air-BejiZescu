@@ -29,12 +29,12 @@
         </Label>
         <TextField fx:id="eMail" layoutX="118.0" layoutY="151.0" prefHeight="26.0" prefWidth="251.0" />
         <TextField fx:id="phoneNumber" layoutX="188.0" layoutY="224.0" prefHeight="26.0" prefWidth="181.0" />
-        <Label layoutX="35.0" layoutY="294.0" text="Name of Agency" textFill="#0c1649">
+        <Label layoutX="35.0" layoutY="294.0" text="Personal Key" textFill="#0c1649">
             <font>
                 <Font name="Times New Roman Bold" size="21.0" />
             </font>
         </Label>
-        <TextField fx:id="nameOfAgency" layoutX="187.0" layoutY="293.0" prefHeight="26.0" prefWidth="182.0" />
+        <TextField fx:id="personalKey" layoutX="187.0" layoutY="293.0" prefHeight="26.0" prefWidth="182.0" />
         <Button fx:id="saveButton" layoutX="224.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleRegisterAgent" prefHeight="38.0" prefWidth="107.0" text="Save">
          <font>
             <Font name="Times New Roman Bold" size="22.0" />
