@@ -2,6 +2,8 @@ package org.reg.model;
 
 import org.dizitart.no2.objects.Id;
 
+import java.util.Objects;
+
 public class User {
     @Id
     private String username;
@@ -18,7 +20,7 @@ public class User {
         this.name = name;
     }
 
-    public User(String username, String password, String role, String name, String eMail, String phoneNumber, String nameOfAgency) {
+    public User(String username, String password, String role, String name, String eMail, String phoneNumber, String personalKey) {
         this.username = username;
         this.password = password;
         this.role = role;
@@ -56,15 +58,16 @@ public class User {
         this.role = role;
     }
 
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
         User user = (User) o;
 
-        if (username != null ? !username.equals(user.username) : user.username != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        return role != null ? role.equals(user.role) : user.role == null;
+        if (!Objects.equals(username, user.username)) return false;
+        if (!Objects.equals(password, user.password)) return false;
+        return true;
     }
 
     public int hashCode() {
