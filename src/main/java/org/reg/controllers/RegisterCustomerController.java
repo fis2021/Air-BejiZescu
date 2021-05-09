@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import org.reg.services.UserService;
 
 
-public class RegisterControllerCustomer {
+public class RegisterCustomerController {
 
     private String usernameField;
     private String passwordField;
@@ -26,12 +26,14 @@ public class RegisterControllerCustomer {
     @FXML
     private TextField eMail;
     @FXML
+    private TextField paymentDetails;
+    @FXML
     private Button saveButton;
 
     @FXML
     public void handleRegisterClient() throws Exception {
         try {
-            UserService.addUser(usernameField, passwordField, role, name.getText(), eMail.getText(), phoneNumber.getText());
+            UserService.addUser(usernameField, passwordField, role, name.getText(), eMail.getText(), phoneNumber.getText(), paymentDetails.getText());
             Parent root= FXMLLoader.load(getClass().getClassLoader().getResource("customerPage.fxml"));
             Stage stage = (Stage) (saveButton.getScene().getWindow());
             stage.setScene(new Scene(root));

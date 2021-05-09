@@ -15,7 +15,7 @@ import org.reg.services.UserService;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 
-public class RegisterControllerAdministrator {
+public class RegisterAdministratorController {
 
     private String usernameField;
     private String passwordField;

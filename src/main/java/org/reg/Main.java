@@ -18,8 +18,8 @@ public class Main extends Application {
         initDirectory();
         UserService.initDatabase();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
-        primaryStage.setTitle("Registration Form for Air BejiZescu");
-        primaryStage.setScene(new Scene(root, 600, 397));
+        primaryStage.setTitle("Air BejiZescu Airline Company App");
+        primaryStage.setScene(new Scene(root, 650, 450));
         primaryStage.show();
     }
 

@@ -4,6 +4,7 @@ import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.reg.exceptions.PasswordIncorrectException;
 import org.reg.model.User;
+import org.reg.exceptions.WrongPasswordException;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -31,6 +32,10 @@ public class UserService {
         userRepository.insert(new User(username, encodePassword(username, password), role, name, eMail, phoneNumber, personalKey));
     }
 
+    public static void loginUser(String username, String password) throws WrongPasswordException {
+        checkPassword(password, username);
+    }
+
     public static boolean checkUserDoesAlreadyExist(String username, String password) throws PasswordIncorrectException{
         for (User user : userRepository.find()) {
             if (Objects.equals(username, user.getUsername())) {
@@ -40,6 +45,20 @@ public class UserService {
             }
         }
         return false;
+    }
+
+    public static void checkPassword(String password, String username) throws WrongPasswordException {
+        int ok = 0;
+        for(User user : userRepository.find()) {
+            if (Objects.equals(username, user.getUsername())) {
+                if (Objects.equals(encodePassword(username, password), user.getPassword())) {
+                    ok = 1;
+                }
+            }
+        }
+        if (ok == 0) {
+            throw new WrongPasswordException();
+        }
     }
 
     private static String encodePassword(String salt, String password) {
@@ -62,4 +81,5 @@ public class UserService {
         }
         return md;
     }
+    public static ObjectRepository<User> getUsers() {return userRepository;}
 }
