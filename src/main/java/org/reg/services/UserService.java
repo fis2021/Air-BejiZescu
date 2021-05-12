@@ -16,6 +16,10 @@ import static org.reg.services.FileSystemService.getPathToFile;
 public class UserService {
     private static ObjectRepository<User> userRepository;
 
+    public static ObjectRepository<User> getUserRepository() {
+        return userRepository;
+    }
+
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
                 .filePath(getPathToFile("Air BejiZescu.db").toFile())
