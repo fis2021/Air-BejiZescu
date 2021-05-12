@@ -26,14 +26,15 @@ public class RegisterCustomerController {
     @FXML
     private TextField eMail;
     @FXML
-    private TextField paymentDetails;
+    private TextField passport;
     @FXML
     private Button saveButton;
 
     @FXML
     public void handleRegisterClient() throws Exception {
         try {
-            UserService.addUser(usernameField, passwordField, role, name.getText(), eMail.getText(), phoneNumber.getText(), paymentDetails.getText());
+            UserService.addUser(usernameField, passwordField, role, name.getText(), eMail.getText(),
+                    phoneNumber.getText(), passport.getText());
             Parent root= FXMLLoader.load(getClass().getClassLoader().getResource("customerPage.fxml"));
             Stage stage = (Stage) (saveButton.getScene().getWindow());
             stage.setScene(new Scene(root));

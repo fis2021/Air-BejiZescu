@@ -33,7 +33,8 @@ public class RegisterAdministratorController {
     @FXML
     public void handleRegisterAgent() throws Exception{
         try {
-            UserService.addUser(usernameField, passwordField, role, name.getText(), eMail.getText(), phoneNumber.getText(), personalKey.getText());
+            UserService.addUser(usernameField, passwordField, role, name.getText(), eMail.getText(),
+                    phoneNumber.getText(), personalKey.getText());
             Parent root=FXMLLoader.load(getClass().getClassLoader().getResource("administratorPage.fxml"));
             Stage stage = (Stage) (saveButton.getScene().getWindow());
             stage.setScene(new Scene(root));
