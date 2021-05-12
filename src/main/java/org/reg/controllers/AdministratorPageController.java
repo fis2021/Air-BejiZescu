@@ -23,7 +23,6 @@ public class AdministratorPageController {
     @FXML
     private Button flightListButton;
 
-
     @FXML
     public void handleLogout(javafx.event.ActionEvent login) throws IOException {
         FXMLLoader Loader = new FXMLLoader();

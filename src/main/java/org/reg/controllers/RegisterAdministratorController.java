@@ -2,7 +2,6 @@ package org.reg.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,7 +11,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.reg.services.UserService;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class RegisterAdministratorController {
@@ -35,7 +33,8 @@ public class RegisterAdministratorController {
     @FXML
     public void handleRegisterAgent() throws Exception{
         try {
-            UserService.addUser(usernameField, passwordField, role, name.getText(), eMail.getText(), phoneNumber.getText(), personalKey.getText());
+            UserService.addUser(usernameField, passwordField, role, name.getText(), eMail.getText(),
+                    phoneNumber.getText(), personalKey.getText());
             Parent root=FXMLLoader.load(getClass().getClassLoader().getResource("administratorPage.fxml"));
             Stage stage = (Stage) (saveButton.getScene().getWindow());
             stage.setScene(new Scene(root));
