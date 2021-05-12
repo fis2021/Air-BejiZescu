@@ -31,7 +31,7 @@
             <Font name="Times New Roman" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="addButton" layoutX="250.0" layoutY="99.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" text="Add a flight">
+      <Button fx:id="addButton" layoutX="250.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleAddFlight" prefHeight="50.0" prefWidth="191.0" text="Add a flight">
          <font>
             <Font name="Times New Roman" size="20.0" />
          </font>

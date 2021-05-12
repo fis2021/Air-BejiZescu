@@ -5,6 +5,7 @@ import org.dizitart.no2.objects.Id;
 public class Flight {
     @Id
     private String id;
+    private String personalKey;
     private String code;
     private String name;
     private String source;
@@ -12,10 +13,11 @@ public class Flight {
     private String capacity;
     private String flightClass;
 
-    public Flight(String id, String code, String name, String source, String destination,
+    public Flight(String id, String personalKey, String code, String name, String source, String destination,
                   String capacity, String flightClass)
     {
         this.id = id;
+        this.personalKey = personalKey;
         this.code = code;
         this.name = name;
         this.source = source;
@@ -34,6 +36,10 @@ public class Flight {
     public void setId() {
         this.id = id;
     }
+
+    public String getPersonalKey() { return personalKey; }
+
+    public void setPersonalKey(String personalKey) { this.personalKey = personalKey; }
 
     public String getCode() {
         return code;

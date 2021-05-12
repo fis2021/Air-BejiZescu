@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="465.0" prefWidth="694.0" style="-fx-background-color: #00BFFF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.AddFlightController">
+   <children>
+      <Button fx:id="saveButton" layoutX="370.0" layoutY="379.0" mnemonicParsing="false" onAction="#handleSaveFlight" prefHeight="62.0" prefWidth="111.0" text="Save">
+         <font>
+            <Font name="Centaur" size="27.0" />
+         </font>
+      </Button>
+      <TextField fx:id="flightClass" layoutX="192.0" layoutY="324.0" promptText="Flight Class">
+         <font>
+            <Font name="Centaur" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="destination" layoutX="431.0" layoutY="248.0" promptText="Flight Destination">
+         <font>
+            <Font name="Centaur" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="name" layoutX="192.0" layoutY="183.0" promptText="Flight Name">
+         <font>
+            <Font name="Centaur" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="source" layoutX="192.0" layoutY="248.0" promptText="Flight Source">
+         <font>
+            <Font name="Centaur" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="capacity" layoutX="431.0" layoutY="324.0" promptText="Flight Capacity">
+         <font>
+            <Font name="Centaur" size="18.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="161.0" fitWidth="199.0" layoutX="494.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="5.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter the new flight details, administrator" wrappingWidth="523.13671875">
+         <font>
+            <Font name="Times New Roman" size="46.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="215.0" fitWidth="234.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo1.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="logoutButton" layoutX="581.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="62.0" prefWidth="111.0" text="Logout">
+         <font>
+            <Font name="Centaur" size="27.0" />
+         </font>
+      </Button>
+      <TextField fx:id="code" layoutX="431.0" layoutY="183.0" promptText="Flight Code">
+         <font>
+            <Font name="Centaur" size="18.0" />
+         </font>
+      </TextField>
+      <Button fx:id="backButton" layoutX="27.0" layoutY="183.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="62.0" prefWidth="111.0" text="Back">
+         <font>
+            <Font name="Centaur" size="27.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
