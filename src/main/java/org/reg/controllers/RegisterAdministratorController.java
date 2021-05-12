@@ -2,7 +2,6 @@ package org.reg.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,7 +11,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.reg.services.UserService;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class RegisterAdministratorController {
