@@ -19,8 +19,6 @@ public class CustomerPageController {
     @FXML
     private Button enrolledListButton;
     @FXML
-    private Button paymentButton;
-    @FXML
     private Button accountButton;
 
     @FXML

@@ -33,4 +33,15 @@ public class AdministratorPageController {
         window.setScene(LoginScene);
         window.show();
     }
+
+    @FXML
+    public void handleAddFlight(javafx.event.ActionEvent addFlight) throws IOException {
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getClassLoader().getResource("addFlightPage.fxml"));
+        Parent viewAddFlightPage = Loader.load();
+        Scene LoginScene = new Scene(viewAddFlightPage, 700, 500);
+        Stage window = (Stage) ((Node) addFlight.getSource()).getScene().getWindow();
+        window.setScene(LoginScene);
+        window.show();
+    }
 }
