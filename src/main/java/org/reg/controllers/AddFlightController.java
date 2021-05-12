@@ -58,8 +58,6 @@ public class AddFlightController {
     @FXML
     public void handleSaveFlight() throws Exception {
         try {
-            User loggedInUser=REPOSITORY.find(eq("username",username)).firstOrDefault();
-            personalKey=loggedInUser.getPersonalKey();
             String id = NitriteId.newId().toString();
             FlightService.addFlight(id, personalKey, code.getText(), name.getText(), source.getText(), destination.getText(),
                     capacity.getText(), flightClass.getText());

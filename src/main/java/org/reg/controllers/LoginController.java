@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.reg.exceptions.WrongPasswordException;
+import org.reg.services.FlightService;
 import org.reg.services.UserService;
 
 import java.io.IOException;
@@ -57,6 +58,7 @@ public class LoginController {
                 window.setScene(administratorPageScene);
                 window.show();
             }
+            FlightService.initDatabase();
         } catch (WrongPasswordException e) {
             password.clear();
         }
