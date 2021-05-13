@@ -33,7 +33,7 @@ public class Flight {
         return id;
     }
 
-    public void setId() {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -88,4 +88,5 @@ public class Flight {
     public void setFlightClass(String flightClass) {
         this.flightClass = flightClass;
     }
+
 }
