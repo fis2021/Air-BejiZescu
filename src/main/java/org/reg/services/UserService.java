@@ -86,4 +86,13 @@ public class UserService {
         return md;
     }
     public static ObjectRepository<User> getUsers() {return userRepository;}
+
+    public static User getUserFromDatabase(String username) {
+        for(User user : userRepository.find()) {
+            if(user.getUsername().equals(username)) {
+                return user;
+            }
+        }
+        return null;
+    }
 }
