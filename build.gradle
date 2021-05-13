@@ -38,7 +38,7 @@ jar {
 
     archiveName = 'Air BejiZescu.jar'
     from {
-        configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}
+       configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}
     }
 }
 
