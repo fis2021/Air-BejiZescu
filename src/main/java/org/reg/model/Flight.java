@@ -2,6 +2,8 @@ package org.reg.model;
 
 import org.dizitart.no2.objects.Id;
 
+import java.util.ArrayList;
+
 public class Flight {
     @Id
     private String id;
@@ -12,6 +14,14 @@ public class Flight {
     private String destination;
     private String capacity;
     private String flightClass;
+
+    private ArrayList<String> enrolledPassengers = new ArrayList<String>();
+
+    public ArrayList<String> getEnrolledPassengers() { return enrolledPassengers; }
+
+    public void setEnrolledPassengers(ArrayList<String> enrolledPassengers) { this.enrolledPassengers = enrolledPassengers; }
+
+
 
     public Flight(String id, String personalKey, String code, String name, String source, String destination,
                   String capacity, String flightClass)
