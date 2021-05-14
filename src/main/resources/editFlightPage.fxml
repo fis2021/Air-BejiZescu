@@ -13,24 +13,29 @@
          <items>
             <AnchorPane prefHeight="477.0" prefWidth="257.0" style="-fx-background-color: #ADFF2F;">
                <children>
-                  <Button fx:id="backButton" layoutX="100.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="55.0" prefWidth="101.0" text="Back">
+                  <Button fx:id="backButton" layoutX="97.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="55.0" prefWidth="101.0" text="Back">
                      <font>
                         <Font name="Times New Roman Bold" size="27.0" />
                      </font>
                   </Button>
-                  <Text layoutX="19.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press the button bellow to get back to the Administration Page" wrappingWidth="257.0">
+                  <Text layoutX="19.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press the button bellow to get back to the Administration Page" wrappingWidth="257.0">
                      <font>
-                        <Font name="Times New Roman" size="31.0" />
+                        <Font name="Times New Roman Italic" size="19.0" />
                      </font>
                   </Text>
-                  <Text layoutX="37.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EDITOR PAGE" wrappingWidth="257.0">
+                  <Text layoutX="19.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EDITOR PAGE" wrappingWidth="257.0">
                      <font>
-                        <Font name="Times New Roman" size="31.0" />
+                        <Font name="Times New Roman" size="39.0" />
                      </font>
                   </Text>
-                  <Text layoutX="19.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please, be cautious while editing" wrappingWidth="257.0">
+                  <Text layoutX="19.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please, be cautious while editing!!!" wrappingWidth="257.0">
                      <font>
                         <Font name="Times New Roman Bold Italic" size="31.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="19.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*double click on each item and then press Enter for the edit to occur*" wrappingWidth="257.0">
+                     <font>
+                        <Font name="Bell MT Italic" size="19.0" />
                      </font>
                   </Text>
                </children>

@@ -30,7 +30,7 @@
             <Font name="Times New Roman Italic" size="19.0" />
          </font>
       </Text>
-      <Button fx:id="enrolledListButton" layoutX="180.0" layoutY="322.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="212.0" text="List enrolled flights!">
+      <Button fx:id="enrolledListButton" layoutX="180.0" layoutY="322.0" mnemonicParsing="false" onAction="#handleEnrolledFlights" prefHeight="50.0" prefWidth="212.0" text="List enrolled flights!">
          <font>
             <Font name="Centaur" size="24.0" />
          </font>

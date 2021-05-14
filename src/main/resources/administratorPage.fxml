@@ -36,7 +36,7 @@
             <Font name="Times New Roman" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="cancelButton" layoutX="250.0" layoutY="213.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="191.0" text="Cancel a flight">
+      <Button fx:id="cancelButton" layoutX="250.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleDeleteFlight" prefHeight="50.0" prefWidth="191.0" text="Cancel a flight">
          <font>
             <Font name="Times New Roman" size="20.0" />
          </font>
