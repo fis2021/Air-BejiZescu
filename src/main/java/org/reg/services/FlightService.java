@@ -12,7 +12,7 @@ public class FlightService {
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
-                .filePath(getPathToFlight("offers-database.db").toFile())
+                .filePath(getPathToFlight("flights-database.db").toFile())
                 .openOrCreate("test", "test");
 
         flightRepository = database.getRepository(Flight.class);

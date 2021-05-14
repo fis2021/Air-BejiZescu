@@ -44,4 +44,15 @@ public class CustomerPageController {
         window.setScene(LoginScene);
         window.show();
     }
+
+    @FXML
+    public void handleEnroll(javafx.event.ActionEvent enrollPage) throws IOException {
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getClassLoader().getResource("enrollFlightPage.fxml"));
+        Parent viewFlights = Loader.load();
+        Scene LoginScene = new Scene(viewFlights, 605, 470);
+        Stage window = (Stage) ((Node) enrollPage.getSource()).getScene().getWindow();
+        window.setScene(LoginScene);
+        window.show();
+    }
 }
