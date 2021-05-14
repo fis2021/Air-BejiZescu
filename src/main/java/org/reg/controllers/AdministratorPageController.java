@@ -41,7 +41,6 @@ public class AdministratorPageController {
     @FXML
     public void handleAddFlight(javafx.event.ActionEvent addFlight) throws Exception {
         ObservableList<Flight> newList = FXCollections.observableArrayList();
-        //Cursor<Flight> cursor = REPOSITORY.find(FindOptions.sort("name", SortOrder.Ascending));
         for(Flight flight:FlightService.getFlightRepository().find()) {
             if(Objects.equals(personalKey, flight.getPersonalKey())) {
                 newList.add(flight);
@@ -96,6 +95,17 @@ public class AdministratorPageController {
         window.show();
     }
 
+    @FXML
+    public void handleDeleteFlight(javafx.event.ActionEvent deleteFlightsPage) throws IOException {
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getClassLoader().getResource("deleteFlightPage.fxml"));
+        Parent viewFlights = Loader.load();
+        Scene LoginScene = new Scene(viewFlights, 651, 544);
+        Stage window = (Stage) ((Node) deleteFlightsPage.getSource()).getScene().getWindow();
+        window.setScene(LoginScene);
+        window.show();
+    }
+
     public void setUsername(String username){ this.username = username;}
 
     public void setPersonalKey(String personalKey) {this.personalKey = personalKey;}
@@ -103,7 +113,4 @@ public class AdministratorPageController {
     public static ObservableList<Flight> getFlights() {return flights;}
 
     public static Stage getStage() {return stage;}
-
-
-
 }
