@@ -85,6 +85,17 @@ public class AdministratorPageController {
         window.show();
     }
 
+    @FXML
+    public void handleShowFlights(javafx.event.ActionEvent flightsPage) throws IOException {
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getClassLoader().getResource("viewFlightPage.fxml"));
+        Parent viewFlights = Loader.load();
+        Scene LoginScene = new Scene(viewFlights, 605, 470);
+        Stage window = (Stage) ((Node) flightsPage.getSource()).getScene().getWindow();
+        window.setScene(LoginScene);
+        window.show();
+    }
+
     public void setUsername(String username){ this.username = username;}
 
     public void setPersonalKey(String personalKey) {this.personalKey = personalKey;}
