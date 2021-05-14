@@ -17,6 +17,8 @@ public class CustomerPageController {
     @FXML
     private Button flightListButton;
     @FXML
+    private Button enrollButton;
+    @FXML
     private Button enrolledListButton;
     @FXML
     private Button accountButton;
@@ -28,6 +30,17 @@ public class CustomerPageController {
         Parent viewLogin = Loader.load();
         Scene LoginScene = new Scene(viewLogin, 650, 450);
         Stage window = (Stage) ((Node) login.getSource()).getScene().getWindow();
+        window.setScene(LoginScene);
+        window.show();
+    }
+
+    @FXML
+    public void handleShowFlights(javafx.event.ActionEvent flightsPage) throws IOException {
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getClassLoader().getResource("viewFlightPageCustomer.fxml"));
+        Parent viewFlights = Loader.load();
+        Scene LoginScene = new Scene(viewFlights, 605, 470);
+        Stage window = (Stage) ((Node) flightsPage.getSource()).getScene().getWindow();
         window.setScene(LoginScene);
         window.show();
     }
