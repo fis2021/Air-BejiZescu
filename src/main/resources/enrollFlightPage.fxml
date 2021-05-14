@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.EnrollFlightController">
+   <children>
+      <Button fx:id="backButton" layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleBackCustomer" text="Back" />
+      <TableView fx:id="flightsTableView" layoutY="63.0" prefHeight="262.0" prefWidth="600.0" />
+      <Button fx:id="enrollButton" layoutX="179.0" layoutY="341.0" mnemonicParsing="false" onAction="#handleViewEnroll" prefHeight="26.0" prefWidth="137.0" text="Enroll" />
+   </children>
+</AnchorPane>
