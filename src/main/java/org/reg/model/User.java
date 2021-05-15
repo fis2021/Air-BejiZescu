@@ -58,6 +58,10 @@ public class User {
 
     public String getPersonalKey(){ return personalKey;}
 
+    public String getName() {return name;}
+
+    public void setName() {this.name = name;}
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

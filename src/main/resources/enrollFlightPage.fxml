@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="520.0" prefWidth="650.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.EnrollFlightController">
+   <children>
+      <Button fx:id="backButton" layoutX="558.0" layoutY="454.0" mnemonicParsing="false" onAction="#handleBackCustomer" prefHeight="46.0" prefWidth="79.0" text="Back">
+         <font>
+            <Font name="Centaur" size="22.0" />
+         </font></Button>
+      <TableView fx:id="flightsTableView" layoutX="1.0" layoutY="150.0" prefHeight="279.0" prefWidth="650.0" style="-fx-background-color: cyan;" />
+      <Button fx:id="enrollButton" layoutX="246.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleViewEnroll" prefHeight="65.0" prefWidth="159.0" text="Start Enrolling!">
+         <font>
+            <Font name="Centaur" size="22.0" />
+         </font></Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="180.0" fitWidth="159.0" layoutX="491.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo1.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

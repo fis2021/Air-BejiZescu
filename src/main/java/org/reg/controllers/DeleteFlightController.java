@@ -1,40 +1,40 @@
 package org.reg.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import org.reg.model.Flight;
 import org.reg.model.User;
 import org.reg.services.FlightService;
 import org.reg.services.UserService;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-public class ViewFlightController {
+public class DeleteFlightController {
+
 
     @FXML
     Button backButton;
+    @FXML
+    Button deleteButton;
     @FXML
     TableView flightsTableView;
 
     @FXML
     private void initialize(){
         fillFlightsTableView();
-        flightsTableView.setEditable(false);
-        nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        codeColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        destinationColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        capacityColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        flightClassColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        sourceColumn.setCellFactory(TextFieldTableCell.forTableColumn());
+        flightsTableView.setEditable(true);
     }
 
     TableColumn<Flight, String> codeColumn = new TableColumn<>("Code");
@@ -83,24 +83,57 @@ public class ViewFlightController {
     }
 
     @FXML
+    private void handleDelete(ActionEvent actionEvent) {
+        TableColumn<Flight, Void> colBtn = new TableColumn();
+
+        Callback<TableColumn<Flight, Void>, TableCell<Flight, Void>> cellFactory = new Callback<TableColumn<Flight, Void>, TableCell<Flight, Void>>() {
+            @Override
+            public TableCell<Flight, Void> call(final TableColumn<Flight, Void> param) {
+                final TableCell<Flight, Void> cell = new TableCell<Flight, Void>() {
+
+                    private final Button btn = new Button("Delete");
+                    {
+                        btn.setOnAction((ActionEvent event) -> {
+
+                            Flight deletedFlight = getTableView().getItems().get(getIndex());
+
+                            flightsTableView.getItems().remove(deletedFlight);
+
+                            FlightService.getFlightRepository().remove(deletedFlight);
+                            btn.setDisable(true);
+                        });
+                    }
+
+                    @Override
+                    public void updateItem(Void item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(btn);
+                        }
+                    }
+                };
+                return cell;
+            }
+        };
+
+        colBtn.setCellFactory(cellFactory);
+
+        flightsTableView.getColumns().add(colBtn);
+
+        deleteButton.setDisable(true);
+
+    }
+
+    @FXML
     public void handleBack(javafx.event.ActionEvent adminPage) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("administratorPage.fxml"));
         Parent viewAdmin = Loader.load();
-        Scene LoginScene = new Scene(viewAdmin, 650, 450);
+        Scene adminScene = new Scene(viewAdmin, 650, 450);
         Stage window = (Stage) ((Node) adminPage.getSource()).getScene().getWindow();
-        window.setScene(LoginScene);
-        window.show();
-    }
-
-    @FXML
-    public void handleBackCustomer(javafx.event.ActionEvent customerPage) throws IOException {
-        FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("customerPage.fxml"));
-        Parent viewCustomer = Loader.load();
-        Scene LoginScene = new Scene(viewCustomer, 650, 450);
-        Stage window = (Stage) ((Node) customerPage.getSource()).getScene().getWindow();
-        window.setScene(LoginScene);
+        window.setScene(adminScene);
         window.show();
     }
 }
