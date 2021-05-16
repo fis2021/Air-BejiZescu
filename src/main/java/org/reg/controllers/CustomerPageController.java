@@ -61,7 +61,7 @@ public class CustomerPageController {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("viewEnrolledFlightPage.fxml"));
         Parent viewFlights = Loader.load();
-        Scene LoginScene = new Scene(viewFlights, 605, 470);
+        Scene LoginScene = new Scene(viewFlights, 610, 576);
         Stage window = (Stage) ((Node) enrolledPage.getSource()).getScene().getWindow();
         window.setScene(LoginScene);
         window.show();
