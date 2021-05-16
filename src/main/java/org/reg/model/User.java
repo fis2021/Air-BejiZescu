@@ -58,9 +58,19 @@ public class User {
 
     public String getPersonalKey(){ return personalKey;}
 
+    public void setPersonalKey(){this.personalKey = personalKey;}
+
     public String getName() {return name;}
 
     public void setName() {this.name = name;}
+
+    public String geteMail() {return eMail;}
+
+    public void seteMail() { this.eMail = eMail;}
+
+    public String getPhoneNumber() {return phoneNumber;}
+
+    public void setPhoneNumber() {this.phoneNumber = phoneNumber;}
 
     @Override
     public boolean equals(Object o) {

@@ -3,12 +3,14 @@ package org.reg.services;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.reg.model.Flight;
-import org.reg.model.User;
+
+import java.util.List;
 
 import static org.reg.services.FileSystemService.getPathToFlight;
 
 public class FlightService {
     private static ObjectRepository<Flight> flightRepository;
+    private static Nitrite database;
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
@@ -35,5 +37,14 @@ public class FlightService {
         }
         return null;
     }
+
+    public static Nitrite getDatabase() {
+        return database;
+    }
+
+    public static List<Flight> getAllFlights() {
+        return flightRepository.find().toList();
+    }
+
 
 }
