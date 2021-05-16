@@ -9,12 +9,14 @@ import org.reg.exceptions.WrongPasswordException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 import java.util.Objects;
 
 import static org.reg.services.FileSystemService.getPathToFile;
 
 public class UserService {
     private static ObjectRepository<User> userRepository;
+    private static Nitrite database;
 
     public static ObjectRepository<User> getUserRepository() {
         return userRepository;
@@ -34,6 +36,10 @@ public class UserService {
 
     public static void addUser(String username, String password, String role, String name, String eMail, String phoneNumber, String personalKey) {
         userRepository.insert(new User(username, encodePassword(username, password), role, name, eMail, phoneNumber, personalKey));
+    }
+
+    public static List<User> getAllUsers() {
+        return userRepository.find().toList();
     }
 
     public static void loginUser(String username, String password) throws WrongPasswordException {
@@ -65,7 +71,7 @@ public class UserService {
         }
     }
 
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 
@@ -94,5 +100,9 @@ public class UserService {
             }
         }
         return null;
+    }
+
+    public static Nitrite getDatabase() {
+        return database;
     }
 }

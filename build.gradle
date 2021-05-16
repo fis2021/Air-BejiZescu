@@ -1,45 +1,55 @@
 plugins {
     id 'java'
     id 'application'
+    id 'maven-publish'
     id 'org.openjfx.javafxplugin' version '0.0.9'
+    id 'jacoco'
 }
 
+javafx {
+    version = '11.0.2'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+apply plugin: 'idea'
 group 'org.loose.fis'
 version '1.0-SNAPSHOT'
 description = 'A simple registration example using Java 15+, JavaFX, Maven / Gradle and saving users in Nitrite Java (with encoded passwords).'
 
 repositories {
+    mavenLocal()
     mavenCentral()
-}
-
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-    implementation 'org.dizitart:nitrite:3.4.3'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.1'
-}
-
-test {
-    useJUnitPlatform()
 }
 
 sourceCompatibility = 15
 targetCompatibility = 15
 
-javafx {
-    modules = [ 'javafx.controls', 'javafx.fxml' ]
-    version = '11.0.2'
+
+dependencies {
+
+    testCompileOnly 'org.junit.jupiter:junit-jupiter-api:5.5.1'
+    testCompileOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.1'
+    testCompileOnly'org.testfx:testfx-junit5:4.0.16-alpha'
+    testCompileOnly group: 'org.assertj', name: 'assertj-core', version: '3.13.2'
+    testCompileOnly group: 'commons-io', name: 'commons-io', version: '2.8.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+    implementation 'org.dizitart:nitrite:3.4.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.1'
+
 }
 
-jar {
-    manifest {
-        attributes "Main-Class": "Air-BejiZescu.Main"
-    }
 
-    archiveName = 'Air BejiZescu.jar'
-    from {
-       configurations.compile.collect {it.isDirectory() ? it : zipTree(it)}
-    }
+test {
+    finalizedBy jacocoTestReport // report is always generated after tests run
+    useJUnitPlatform()
+}
+
+
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
 }
 
 mainClassName = 'org.reg.Main'
