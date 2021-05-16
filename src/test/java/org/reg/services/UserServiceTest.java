@@ -57,7 +57,7 @@ class UserServiceTest {
         assertThat(user1.getPhoneNumber()).isEqualTo("user1");
     }
 
-    @TestOnly
+    @Test
     void administratorIsAddedToDatabase() {
         UserService.addUser("user2","user2","Travel Agent","user2","user2","user2","user2");
         assertThat(UserService.getAllUsers()).size().isEqualTo(1);

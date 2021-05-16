@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="472.0" prefWidth="589.0" style="-fx-background-color: #00FFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.RegisterAdministratorController">
     <children>
-        <TextField fx:id="name" layoutX="118.0" layoutY="90.0" mouseTransparent="true" prefHeight="26.0" prefWidth="251.0" />
+        <TextField fx:id="name" id= "name" layoutX="118.0" layoutY="90.0" mouseTransparent="true" prefHeight="26.0" prefWidth="251.0" />
         <Label layoutX="36.0" layoutY="91.0" prefHeight="18.0" prefWidth="82.0" text="Name" textFill="#0c1649">
             <font>
                 <Font name="Times New Roman Bold" size="21.0" />
@@ -27,15 +27,15 @@
                 <Font name="Times New Roman Bold" size="21.0" />
             </font>
         </Label>
-        <TextField fx:id="eMail" layoutX="118.0" layoutY="151.0" prefHeight="26.0" prefWidth="251.0" />
-        <TextField fx:id="phoneNumber" layoutX="188.0" layoutY="224.0" prefHeight="26.0" prefWidth="181.0" />
+        <TextField fx:id="eMail" id="eMail" layoutX="118.0" layoutY="151.0" prefHeight="26.0" prefWidth="251.0" />
+        <TextField fx:id="phoneNumber" id="phoneNumber" layoutX="188.0" layoutY="224.0" prefHeight="26.0" prefWidth="181.0" />
         <Label layoutX="35.0" layoutY="294.0" text="Personal Key" textFill="#0c1649">
             <font>
                 <Font name="Times New Roman Bold" size="21.0" />
             </font>
         </Label>
-        <TextField fx:id="personalKey" layoutX="187.0" layoutY="293.0" prefHeight="26.0" prefWidth="182.0" />
-        <Button fx:id="saveButton" layoutX="224.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleRegisterAgent" prefHeight="38.0" prefWidth="107.0" text="Save">
+        <TextField fx:id="personalKey" id="personalKey" layoutX="187.0" layoutY="293.0" prefHeight="26.0" prefWidth="182.0" />
+        <Button fx:id="saveButton" id="saveBut" layoutX="224.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleRegisterAgent" prefHeight="38.0" prefWidth="107.0" text="Save">
          <font>
             <Font name="Times New Roman Bold" size="22.0" />
          </font></Button>
