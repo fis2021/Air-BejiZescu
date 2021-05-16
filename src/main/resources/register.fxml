@@ -6,20 +6,20 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="577.0" style="-fx-background-color: #87CEEB;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.reg.controllers.RegisterController">
-    <TextField fx:id="usernameField" layoutX="215.0" layoutY="175.0" prefHeight="26.0" prefWidth="241.0" promptText="*Username">
+    <TextField fx:id="usernameField" id="name" layoutX="215.0" layoutY="175.0" prefHeight="26.0" prefWidth="241.0" promptText="*Username">
       <font>
          <Font name="Times New Roman" size="14.0" />
       </font></TextField>
-    <PasswordField fx:id="passwordField" layoutX="214.0" layoutY="221.0" prefHeight="26.0" prefWidth="242.0" promptText="*Password">
+    <PasswordField fx:id="passwordField" id="password" layoutX="214.0" layoutY="221.0" prefHeight="26.0" prefWidth="242.0" promptText="*Password">
       <font>
          <Font name="Times New Roman" size="14.0" />
       </font></PasswordField>
-    <Button fx:id="registerButton" layoutX="276.0" layoutY="298.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="42.0" prefWidth="118.0" text="Register!" textAlignment="CENTER" textFill="#0c1649">
+    <Button fx:id="registerButton" id="regBut" layoutX="276.0" layoutY="298.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="42.0" prefWidth="118.0" text="Register!" textAlignment="CENTER" textFill="#0c1649">
         <font>
             <Font name="Times New Roman" size="15.0" />
         </font>
     </Button>
-    <ChoiceBox fx:id="role" layoutX="260.0" layoutY="254.0" prefWidth="150.0">
+    <ChoiceBox fx:id="role" id="role" layoutX="260.0" layoutY="254.0" prefWidth="150.0">
     </ChoiceBox>
     <Text fx:id="message" fill="#e20909" layoutX="31.0" layoutY="369.0" wrappingWidth="442.200048828125" />
    <ImageView fitHeight="174.0" fitWidth="171.0" layoutX="404.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
