@@ -57,3 +57,4 @@ class FlightServiceTest {
         assertThat(flight.getFlightClass()).isEqualTo("A");
     }
 }
+
